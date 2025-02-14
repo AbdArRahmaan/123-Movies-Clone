@@ -1,0 +1,328 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    width: 100%; /* Ensure the body doesn't extend beyond the viewport */
+    box-sizing: border-box; /* Include padding and borders in element size */
+    background-color: rgb(229, 221, 221);
+}
+.topmost{
+    display: grid;
+    align-items: start;
+    grid-template-columns: 75% 25% auto;
+}
+.searchwrapper{
+    display: grid;
+    grid-template-columns: 85% 15% auto;
+    min-height: 8vh;
+}
+.searcher{
+    min-width: 50px;
+    min-height: 50px;
+    cursor: pointer;
+
+}
+.searchz{
+    min-width: 50px;
+    min-height: 50px;
+}
+.icon{
+    z-index: 10;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.navbar{
+    display: block;
+    background-color: white;
+    min-height: 8vh;
+}
+
+.navbar li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 1.5fr 4.5fr 2fr 2fr 2fr 2fr 2fr 2fr;
+    min-height: 4rem;
+}
+
+.navbar a{
+    color: #1e1e1e;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s ease;
+}
+.navbar a:hover{
+    color: #79c142;
+}
+.dropdown{
+    display: inline-block;
+}
+.dropdown button{
+    background-color: hsl(0, 0%, 80%);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.dropdown .content{
+    display: none;
+    position: absolute;
+    background-color: hsl(0, 0%, 95%);
+    min-width: 100px;
+    box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+}
+.dropdown:hover .content{
+    display: block;
+}
+.dropdown:hover button{
+    background-color: hsl(0, 0%, 70%);
+}
+.dropdown a:hover{
+    background-color: hsl(0, 0%, 90%);
+}
+
+body{
+    font-family: verdana, sans-serif;
+}
+.myslides{
+    display: none;
+}
+.slideshow-container{
+    max-width: 100vw;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    transform: translateY(-50%); /* Center vertically */
+    width: auto;
+    padding: 1rem 1.5rem; /* Use responsive units */
+    margin-top: -10vh;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem; /* Relative font size */
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 10; /* Ensure buttons are above other elements */
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent */
+}
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.dot{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;   
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover{
+    background-color: #717171;
+}
+.fade {
+    -webkit-animation-name:fade ;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade{
+    from {opacity: .4;}
+    to{opacity: 1;}
+}
+@keyframes fade{
+    from {opacity: .4;}
+    to{opacity: 1;}  
+}
+
+
+.myslides-fade{
+    max-width: 100vw;
+    max-height: 100vh;
+}
+p{
+    max-width: 500px;
+}
+.infotabcontainer{
+    color: rgba(0, 0, 0, 0); /* Invisible text initially */
+    background-color: rgba(0, 0, 0, 0); /* Fully transparent background */
+    transition: 0.5s;
+    margin-left: 100px;
+    max-width: fit-content;
+    position: relative;
+    margin-top: -250px;
+    font-weight: bold;
+}
+
+.buttonwatch{
+    color: rgba(0, 0, 0, 0); /* Invisible text initially */
+    background-color: rgba(0, 0, 0, 0); /* Fully transparent background */
+    border-radius: 20px;
+    border: solid;
+    transition: 0.5s;
+    padding-left: 0px;
+    padding-left: -5rem;
+    font-weight: bold;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+}
+
+.infotabcontainer:hover{
+    opacity: 0.7;
+    color: white;
+    background-color: black;
+    .buttonwatch{
+        color: white;
+        background-color: rgb(121, 193, 66);
+        padding: 5px 5px 5px 5px;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .prev, .next {
+        padding: 0.8rem 1rem; /* Reduce padding */
+        font-size: 1.2rem; /* Reduce font size */
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+    .prev, .next {
+        padding: 0.5rem 0.8rem; /* Further reduce padding */
+        font-size: 1rem; /* Smaller font size */
+    }
+}
+
+@media(max-width: 1000px){
+    .navbar{
+        position: absolute;
+    }
+}  
+
+.label{
+    background-color: #79c142;
+    border: solid;
+    max-width: fit-content;
+    padding: 16px 16px 16px 16px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 70px;
+}
+
+.suggestionsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    max-width: 100vw; /* Prevent elements from exceeding the viewport width */
+    overflow: hidden; /* Prevent content spilling out */
+}
+
+.suggestion{
+    max-width: 160px;
+    min-width: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.suggestionimg{
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+.Title{
+    position: absolute;
+    text-align: center;
+    z-index: 10;
+    color: white;
+    transform: translateY(1050%);
+    padding-left: 2rem;
+    max-width: 150px;
+    word-wrap: break-word;
+}
+.bigTitle{
+    position: absolute;
+    text-align: center;
+    z-index: 10;
+    color: white;
+    transform: translateY(480%);
+    padding-left: 2rem;
+    max-width: 100px;
+    word-wrap: break-word;
+}
+.massiveTitle{
+    position: absolute;
+    text-align: center;
+    z-index: 10;
+    color: white;
+    transform: translateY(380%);
+    font-size: small;
+    padding-left: 2rem;
+    max-width: 100px;
+    word-wrap: break-word;  
+}
+
+
+.play{
+    z-index: 10;
+    position: absolute;
+    max-width: 50px;
+    transform: translateY(180%);
+    padding-left: 3.5rem;
+    opacity: 0;
+}
+/* an issue with the current plan is that when you hover solely over play button, the darkness goes back to normal */
+.upperpart {
+    position: relative; /* Ensure .play is positioned relative to this */
+    display: inline-block; /* Prevent collapse of the container */
+    cursor: pointer;
+}
+
+.suggestionimg:hover {
+    filter: brightness(0.4); /* Darken the image on hover */
+}
+
+.upperpart:hover .play {
+    opacity: 1; /* Make the play button visible on hover */
+}
+
+
+
+/* .mlbq {
+    background: #ffc107;
+    border-radius: 3px;
+    color: #222;
+    font-size: 11px;
+    height: auto;
+    line-height: normal;
+    padding: 4px 6px;
+    right: 8px;
+    top: 8px;
+    width: auto;
+    z-index: 4;
+} */
+
